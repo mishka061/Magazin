@@ -25,19 +25,19 @@ class Product(models.Model):
 
     name = models.CharField(
         max_length=150,
-        db_index=True)
+        db_index=True, verbose_name='Наименование')
     slug = models.CharField(
         max_length=150,
         db_index=True,
-        unique=True)
+        unique=True, verbose_name='Ссылка')
     image = models.ImageField(
         upload_to='product/%Y/%m/%d',
-        blank=True)
-    description = models.TextField(max_length=1000, blank=True)  # Описание
-    price = models.DecimalField(max_digits=10, decimal_places=2)  # Цена
-    available = models.BooleanField(default=True)  # Наличие
-    created = models.DateTimeField(auto_now_add=True)  # Добавление
-    uploaded = models.DateTimeField(auto_now=True)  # Обновление
+        blank=True, verbose_name='Картинка')
+    description = models.TextField(max_length=1000, blank=True, verbose_name='Описание')  # Описание
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')  # Цена
+    available = models.BooleanField(default=True, verbose_name='Наличие')  # Наличие
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Добавление')  # Добавление
+    uploaded = models.DateTimeField(auto_now=True, verbose_name='Обновление')  # Обновление
 
     class Meta:
         ordering = ('name',)
