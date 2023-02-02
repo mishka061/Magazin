@@ -10,7 +10,7 @@ Magazin
 
 Python  
 Django  
-JWT-token
+JWT-token  
 HTML 
    
 ### Инструкция по запуску
